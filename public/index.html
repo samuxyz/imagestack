@@ -55,12 +55,18 @@
       <script src="//cdnjs.cloudflare.com/ajax/libs/babel-core/5.6.16/browser.js"></script>
       <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
       <script type="text/babel">
+      filepicker.setKey("YOUR_KEY");
+      filepicker.setResponsiveOptions(
+      {
+        onResize: 'all',
+        pixelRound: 20
+      });
       class Image extends React.Component {
         render() {
           return (
             <div className="col-md-4">
               <div className="thumbnail">
-                <img src={this.props.url} alt="" className="img-rounded"></img>
+                <img data-fp-src={this.props.url} className="img-rounded"></img>
               </div>
               <p>{this.props.caption}</p>
               <div className="btn-group btn-group-sm pull-right" role="group" aria-label="media-stats">
@@ -90,7 +96,7 @@
           });
         }
         componentDidMount() {
-          this.loadImages(this.props.url);
+          this.loadImages(this.props.url);   
         }
         render() {
           var imagesList = this.state.data.map(image => {

@@ -1,9 +1,13 @@
 html, body, div {
 	font-family: 'Montserrat', sans-serif;
 }
+img {
+	width:100%;
+}
 .jumbotron {
 	background: #2e3b44 url("../images/jumbo.gif");
-	background-size: 100% auto;
+	background-size: cover;
+	min-height:300px;
 	padding:7em;
 }
 .jumbotron h1 {
